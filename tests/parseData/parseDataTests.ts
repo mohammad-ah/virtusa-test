@@ -9,7 +9,7 @@ describe("Post /api/v2/parse with body data", () => {
     it("All data should be correct", async () => {
         const res = await request(app).post("/api/v2/parse").send({ "data": "JOHN0000MICHAEL0009994567"});
         expect(res.statusCode).equal(200);
-        expect(res.body.data.firstName).equal("JOHN");  
+        expect(res.body.data.firstName).equal("JOHN");
         expect(res.body.data.lastName).equal("MICHAEL");
         expect(res.body.data.clientId).equal("999-4567");
     });
