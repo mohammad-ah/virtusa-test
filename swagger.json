@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Pokemon Store.",
+    "version": "1.0.5",
+    "title": "Swagger Pokemon Store",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:3000/",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "Pokemon",
+      "description": "Everything about your Pokemons",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/v1/parse": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "parse data version 1",
+        "description": "",
+        "operationId": "parse-v1",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "description": "data to send {'data':'JOHN0000MICHAEL0009994567'}",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns firstName: JOHN0000, lastName: MICHAEL000, clientId: 9994567"
+          }
+        }
+      }
+    },
+    "/api/v2/parse": {
+      "post": {
+        "tags": [
+          "data"
+        ],
+        "summary": "parse data version 2",
+        "description": "",
+        "operationId": "parse-v2",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "description": "data to send {'data':'JOHN0000MICHAEL0009994567'}",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns firstName: JOHN, lastName: MICHAEL, clientId: 999-4567"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

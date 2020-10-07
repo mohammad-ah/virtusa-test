@@ -5,6 +5,9 @@ import expressApiVersioning from 'express-api-versioning';
 const path = require('path');
 const bodyParser = require('body-parser');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 // Create and configure an ExpressJS web server.
 class App {
     // ref to Express instance
@@ -30,6 +33,9 @@ class App {
         /**
          * Routing
          */
+        // the swagger API endpoint
+        this.express.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
         // using expressApiVersioning to do the versioning routing
         const config = {
             apiPath: path.join(__dirname, './api'),
