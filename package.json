@@ -1,0 +1,44 @@
+{
+  "name": "virtusa-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "nodemon ./main.ts",
+    "test": "mocha -r ts-node/register tests/**/*.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.ts\" npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammad-ah/virtusa-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammad-ah/virtusa-test/issues"
+  },
+  "homepage": "https://github.com/mohammad-ah/virtusa-test#readme",
+  "dependencies": {
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.5",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-api-versioning": "^2.0.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/mocha": "^8.0.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "jest": "^26.1.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "supertest": "^4.0.2",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.3"
+  }
+}
